@@ -46,5 +46,10 @@ def run():
 
     pool.map(process_files, files_splits)
 
+def group_dfs():
+    df = pd.concat([pd.read_csv(OUT+f) for f in os.listdir(OUT)])
+    df.to_csv("data/full-interactions.csv", index=False)
+
 if __name__ == '__main__':
     run()
+    group_dfs()
