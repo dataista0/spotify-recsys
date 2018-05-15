@@ -2,7 +2,7 @@
 import os
 import json
 import pandas as pd
-BASEPATH='/media/plotinus/BA94C82994C7E5CB/spotify-dataset/data/'
+BASEPATH='data/mpd/'
 
 COUNTERS = {'track': 0,
             'album': 0,
@@ -52,7 +52,7 @@ for index, basename, fullpath in files:
     print("Processing {} ({})".format(index, basename))
     playlists = json.load(open(fullpath))['playlists']
     reduced_playlists =  [reduce_playlist(pl) for pl in playlists]
-    json.dump(reduced_playlists, open(BASEPATH+"reduced2/{}".format(basename), "w"))
+    json.dump(reduced_playlists, open(BASEPATH+"reduced/{}".format(basename), "w"))
     
-json.dump(MAPS, open(BASEPATH+"reduced2/maps.json", "w"))
-json.dump(TRACK_INFO, open(BASEPATH+"reduced2/track_info.json", "w"))
+json.dump(MAPS, open(BASEPATH+"reduced/maps.json", "w"))
+json.dump(TRACK_INFO, open(BASEPATH+"reduced/track_info.json", "w"))
