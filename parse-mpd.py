@@ -1,3 +1,11 @@
+"""
+    Lee data/mpd/*.json
+     Y escribe en data/mpd/reduced/*.json
+     Los 1000 archivos habiendo tirado todo menos las uris y encodeando todo
+     Funciona secuencial y con globales
+
+"""
+
 import os
 import json
 import pandas as pd
